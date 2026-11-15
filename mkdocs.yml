@@ -6,8 +6,8 @@ edit_uri: edit/main/docs/
 theme:
   variant: modern
   font: false
-  logo: assets/mark.svg
-  favicon: assets/mark.svg
+  logo: assets/gpuaas-operations.png
+  favicon: assets/gpuaas-operations.png
   palette:
     - scheme: default
       primary: white
