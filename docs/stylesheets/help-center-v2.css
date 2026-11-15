@@ -69,3 +69,28 @@ body:has(.help-home) .md-content__button{display:none}
  body:has(.help-home) .md-tabs__link{display:block!important;color:#111!important;visibility:visible!important;opacity:1!important}
 }
 @media(max-width:760px){.md-header__button.md-logo{width:148px!important;height:52px!important}.md-header__button.md-logo img{width:520px!important;height:83.2px!important}}
+
+/* Search-led refinement */
+.help-search{padding:48px 0 64px}
+.search-eyebrow{display:block;font-size:10px;font-weight:700;letter-spacing:.15em;color:#a72b30;margin-bottom:18px}
+.help-search h1{font-size:40px!important;font-weight:650;letter-spacing:-.045em;margin-bottom:14px!important}
+.search-intro{font-size:16px;color:#6b7075;margin:0 0 30px!important}
+.help-search form{max-width:740px;height:70px;padding:7px;border:1px solid #d9dde1;border-radius:14px;box-shadow:0 8px 28px #1726350a;transition:box-shadow .2s,border-color .2s}
+.help-search form:focus-within{outline:none;border-color:#687583;box-shadow:0 0 0 3px #2032440b,0 8px 28px #1726350a}
+.help-search input{padding:14px 17px;font-size:16px}
+.help-search input::placeholder{color:#80858b;opacity:1}
+.help-search button{width:112px;border-radius:9px;background:#203244;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:13px}
+.help-search button:hover{background:#30495e}
+.search-shortcuts{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:18px;font-size:11px}
+.search-shortcuts>span{color:#81858b;margin-right:3px}
+.search-shortcuts a{padding:5px 11px;border:1px solid #e6e8eb;border-radius:20px;text-decoration:none!important;color:#58616a}
+.search-shortcuts a:hover{border-color:#aeb7bf;color:#203244}
+.quick-access h2{font-size:25px;letter-spacing:-.035em;color:#1a2633}
+.quick-access>p{font-size:14px;color:#727981}
+.help-topics{border-top-color:#e6e8eb}
+.help-topics h3{color:#203244;font-size:20px}
+.help-topics a{color:#414a54;font-size:15px;padding:3px 0}
+.help-topics a:hover{color:#a72b30}
+#kb-results{max-width:740px;border-radius:12px;border-color:#e2e5e8;box-shadow:0 8px 24px #17263508;padding:18px 24px}
+#kb-results a{color:#203244}
+@media(max-width:760px){.help-search{padding:32px 0 48px}.help-search h1{font-size:30px!important}.search-intro{font-size:14px;max-width:290px;margin:0 auto 25px!important}.help-search form{height:62px;padding:6px;border-radius:12px}.help-search input{font-size:14px;padding:12px 10px}.help-search button{width:86px;font-size:12px;gap:7px}.search-shortcuts{gap:6px;font-size:10px}.search-shortcuts a{padding:4px 9px}}
