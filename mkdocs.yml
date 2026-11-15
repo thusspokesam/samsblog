@@ -6,18 +6,18 @@ edit_uri: edit/main/docs/
 theme:
   variant: modern
   font: false
-  icon:
-    logo: material/chip
+  logo: assets/gpuaas-operations.png
+  favicon: assets/gpuaas-operations.png
   palette:
     - scheme: default
       primary: white
-      accent: teal
+      accent: red
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
       primary: black
-      accent: teal
+      accent: red
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
