@@ -1,7 +1,16 @@
+---
+title: Deployment guide
+summary: Prepare, configure, and provision
+section: deploy-ops
+type: Guide
+owner: TODO
+status: draft
+order: 10
+tags: []
+---
+
 # Deployment guide
 
-**Status:** Template · Not approved  
-**Owner:** To be assigned  
 **Approver:** To be assigned  
 **Last reviewed:** Pending  
 **Applies to:** To be defined

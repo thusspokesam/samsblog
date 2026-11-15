@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+{% block content %}
+{% set group = page.meta.hub_section %}
+<section class="hub-collection">
+  <h1>{{ group.title | e }}</h1>
+  <p>{{ group.summary | e }}</p>
+  <p>{{ group.items | length }} {{ "guide" if group.items | length == 1 else "guides" }}{% if group.sequence %} · Follow the numbered sequence{% endif %}</p>
+  {% include "partials/hub-list.html" %}
+</section>
+{% endblock %}

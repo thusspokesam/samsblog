@@ -1,0 +1,14 @@
+{% if group.sequence %}<ol class="hub-list hub-sequence" role="list" aria-label="Deployment pipeline">{% else %}<ul class="hub-list" role="list">{% endif %}
+{% for item in group.items %}
+  <li class="{% if item.status == 'deprecated' %}hub-deprecated{% endif %}">
+    <a class="hub-item" href="{{ item.url | url }}">
+      <span class="hub-item-marker" aria-hidden="true">{% if group.sequence %}{{ loop.index }}{% else %}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h7"/></svg>{% endif %}</span>
+      <span class="hub-item-body">
+        <span class="hub-item-title">{{ item.title | e }}</span>
+        <span class="hub-summary">{{ item.summary | e }}</span>
+        {% if item.status == 'draft' or item.status == 'deprecated' %}<strong class="hub-tag">{{ item.status | e }}</strong>{% endif %}
+      </span>
+    </a>
+  </li>
+{% else %}<li>No guides in this collection yet.</li>{% endfor %}
+{% if group.sequence %}</ol>{% else %}</ul>{% endif %}

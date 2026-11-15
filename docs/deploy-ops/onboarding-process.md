@@ -1,7 +1,16 @@
+---
+title: Onboarding process
+summary: Assign ownership and hand over
+section: deploy-ops
+type: Procedure
+owner: TODO
+status: draft
+order: 40
+tags: []
+---
+
 # Onboarding process
 
-**Status:** Template · Not approved  
-**Owner:** To be assigned  
 **Approver:** To be assigned  
 **Last reviewed:** Pending  
 **Applies to:** To be defined
