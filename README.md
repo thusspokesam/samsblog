@@ -1,47 +1,23 @@
-# Sam's Blog
+# AI Knowledge Base
 
-A public Markdown blog built with MkDocs Material.
+MkDocs Material knowledge base for Product Engineering and Deploy & Ops.
 
-## One-time publishing setup
+## Content
 
-In **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions**.
-Then open **Actions → Build and publish blog → Run workflow** if the first deployment ran before Pages was enabled.
+- `docs/product-engineering/`: approved versions, benchmark results, and benchmarking methodology.
+- `docs/deploy-ops/`: deployment, validation, burn-in, and onboarding.
+- `mkdocs.yml`: site navigation and theme.
 
-Expected address: https://thusspokesam.github.io/samsblog/
+All operational documents begin as unapproved templates. Populate and review them before use. The site and repository are public: internal evidence, confidential procedures, and customer data belong in an approved access-controlled system.
 
-## Write a post
-
-Create a Markdown file in `docs/posts/`:
-
-```markdown
----
-date: 2026-11-15
-categories:
-  - Technology
-description: A short summary.
----
-# Your title
-
-A short introduction.
-
-<!-- more -->
-
-The rest of your post.
-```
-
-Commit to `main`. The workflow builds and publishes the blog. Categories, archives, and search update automatically.
-
-For a draft, add `draft: true` to the front matter. Images can go in `docs/assets/`; reference them from a post using `../assets/filename.png`.
-
-## Preview locally
+## Preview and publish
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 mkdocs serve
+mkdocs build --strict
 ```
 
-Open http://127.0.0.1:8000/samsblog/.
-
-Run `mkdocs build --strict` before publishing. Site settings live in `mkdocs.yml`.
+Commits to main publish through GitHub Actions to https://thusspokesam.github.io/samsblog/.
