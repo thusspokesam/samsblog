@@ -1,4 +1,4 @@
-site_name: AI Knowledge Base
+site_name: GPUaaS / Knowledge
 site_url: https://thusspokesam.github.io/samsblog/
 site_description: Product engineering, deployment, and operations documentation for AI infrastructure.
 repo_url: https://github.com/thusspokesam/samsblog
@@ -6,8 +6,8 @@ edit_uri: edit/main/docs/
 theme:
   variant: modern
   font: false
-  logo: assets/gpuaas-operations.png
-  favicon: assets/gpuaas-operations.png
+  logo: assets/mark.svg
+  favicon: assets/mark.svg
   palette:
     - scheme: default
       primary: white
