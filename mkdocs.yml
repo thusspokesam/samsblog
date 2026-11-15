@@ -4,7 +4,7 @@ site_description: Product engineering, deployment, and operations documentation 
 repo_url: https://github.com/thusspokesam/samsblog
 edit_uri: edit/main/docs/
 theme:
-  name: material
+  variant: modern
   font: false
   icon:
     logo: material/chip

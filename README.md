@@ -1,6 +1,6 @@
 # AI Knowledge Base
 
-MkDocs Material knowledge base for Product Engineering and Deploy & Ops.
+Zensical knowledge base for Product Engineering and Deploy & Ops.
 
 ## Content
 
@@ -16,8 +16,10 @@ All operational documents begin as unapproved templates. Populate and review the
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-mkdocs serve
-mkdocs build --strict
+zensical serve
+zensical build --strict
 ```
 
 Commits to main publish through GitHub Actions to https://thusspokesam.github.io/samsblog/.
+
+Zensical reads the existing `mkdocs.yml` configuration. Content and page URLs remain unchanged.
