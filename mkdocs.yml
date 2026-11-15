@@ -39,7 +39,7 @@ nav:
   - Burn-in procedure: deploy-ops/burn-in-procedure.md
   - Onboarding process: deploy-ops/onboarding-process.md
 extra_css:
-- stylesheets/extra.css
+- stylesheets/help-center-v2.css
 markdown_extensions:
 - admonition
 - attr_list
