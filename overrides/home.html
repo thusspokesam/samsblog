@@ -1,10 +1,6 @@
 {% extends "main.html" %}
 {% block content %}
 <div class="hub-home">
-  <section class="hub-hero" aria-labelledby="hub-title">
-    <h1 id="hub-title">Search for answers or<br class="hub-heading-break"> browse by topic</h1>
-    <noscript><p>Search requires JavaScript. Browse the collections below.</p></noscript>
-  </section>
   {% if page.meta.hub.recent %}
   <section class="hub-recent" aria-labelledby="recent-title">
     <h2 id="recent-title">Recently updated</h2>
