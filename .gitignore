@@ -4,6 +4,6 @@ __pycache__/
 .DS_Store
 
 .cache/
-
-.generated/
-.openai/
+docs/stylesheets/gpuaas.*.css
+docs/assets/gpuaas.*.js
+.venv-redesign/

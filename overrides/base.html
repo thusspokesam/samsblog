@@ -1,0 +1,37 @@
+<!doctype html>
+{#- Full page shell. Replaces the Zensical theme's base.html; we load none of its CSS/JS.
+    Engine is MiniJinja: no str.split/startswith, page.is_homepage, nav.homepage, page.parent.
+    `page` is undefined on 404.html, so everything that touches it is guarded. -#}
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f4ef">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0f11">
+{% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+{% if page and page.previous_page %}<link rel="prev" href="{{ page.previous_page.url | url }}">{% endif %}
+{% if page and page.next_page %}<link rel="next" href="{{ page.next_page.url | url }}">{% endif %}
+<link rel="icon" type="image/svg+xml" href="{{ 'assets/brand/favicon.svg' | url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/brand/favicon-32.png' | url }}">
+<link rel="apple-touch-icon" href="{{ 'assets/brand/apple-touch-icon.png' | url }}">
+<title>{% if page and page.title and page.url != '' %}{{ page.title }} - {{ config.site_name }}{% elif page and page.title %}{{ config.site_name }}{% else %}Page not found - {{ config.site_name }}{% endif %}</title>
+<script>(function(){var d=document.documentElement;d.className=d.className.replace('no-js','js');try{var t=localStorage.getItem('gpuaas-theme');if(t==='light'||t==='dark')d.dataset.theme=t}catch(e){}})()</script>
+{% for path in config.extra_css %}<link rel="stylesheet" href="{{ path | url }}">
+{% endfor %}
+{% block extrahead %}{% endblock %}
+</head>
+<body data-base="{{ base_url }}">
+<a class="skip" href="#main" data-skip>Skip to content</a>
+{% include "partials/header.html" %}
+<div class="shell{% if not page or page.url == '' %} shell--home{% endif %}">
+{% block content %}{% endblock %}
+</div>
+{% include "partials/footer.html" %}
+{% include "partials/search.html" %}
+<p id="status" class="sr-only" role="status" aria-live="polite"></p>
+{% for s in config.extra_javascript %}<script defer src="{{ s.path | url }}"></script>
+{% endfor %}
+</body>
+</html>

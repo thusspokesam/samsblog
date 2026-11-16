@@ -1,29 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-  {% if page.meta.hub_page %}
-    {% set item = page.meta.hub_page %}
-    <div class="hub-page-meta">
-      <span>{{ item.type | e }}</span>
-      {% if item.status != "stable" %}<strong class="hub-tag">{{ item.status | e }}</strong>{% endif %}
-      <span>Owner: {{ item.owner | e }}</span>
-      {% if item.updated %}<time datetime="{{ item.updated | e }}" data-hub-updated>Updated {{ item.updated[:10] }}</time>{% else %}<span>Update date unavailable</span>{% endif %}
-    </div>
-  {% endif %}
-  {{ super() }}
-{% endblock %}
-{% block footer %}
-  <footer class="hub-footer">
-    <div class="hub-footer-inner">
-      <span>GPUaaS / r Operations</span>
-      <nav aria-label="Page maintenance">
-        <a href="{{ config.repo_url }}/issues/new">Report an issue</a>
-        {% if page and page.meta and page.meta.hub %}
-          <a href="{{ config.repo_url }}/edit/main/overrides/home.html">Edit this page</a>
-        {% elif page and page.meta and page.meta.hub_section %}
-          <a href="{{ config.repo_url }}/edit/main/overrides/section.html">Edit this page</a>
-        {% elif page and page.edit_url %}<a href="{{ page.edit_url | e }}">Edit this page</a>{% endif %}
-      </nav>
-      <span>Built {{ config.extra.hub_build | e }}</span>
-    </div>
-  </footer>
+{% if page.url == '' %}
+{% include "partials/home.html" %}
+{% else %}
+{% include "partials/page.html" %}
+{% endif %}
 {% endblock %}

@@ -1,0 +1,17 @@
+{#- A link reads "gate" only when its target is one of the current section's gates (finding 2). -#}
+{% set gate_urls = [] %}
+{% if page.ancestors and page.ancestors[0].title in config.extra.sequential_sections %}
+{% set gate_urls = page.ancestors[0].children | rejectattr('is_index') | map(attribute='url') | list %}
+{% endif %}
+<nav class="pager" aria-label="Previous and next pages">
+  {% if page.previous_page %}
+  {% set p = page.previous_page %}
+  <a class="pager__a pager__prev" href="{{ p.url | url }}" rel="prev"><span class="pager__l">{% if p.url in gate_urls %}Previous gate{% else %}Previous{% endif %}</span><span class="pager__t">{% if p.is_index %}{% for it in nav.items %}{% if it.children and it.children[0].url == p.url %}{{ it.title }}{% endif %}{% endfor %} overview{% else %}{{ p.title }}{% endif %}</span></a>
+  {% endif %}
+  {% if page.next_page %}
+  {% set n = page.next_page %}
+  <a class="pager__a pager__next" href="{{ n.url | url }}" rel="next"><span class="pager__l">{% if n.url in gate_urls %}Next gate{% else %}Next{% endif %}</span><span class="pager__t">{% if n.is_index %}{% for it in nav.items %}{% if it.children and it.children[0].url == n.url %}{{ it.title }}{% endif %}{% endfor %} overview{% else %}{{ n.title }}{% endif %}</span></a>
+  {% else %}
+  <a class="pager__a pager__next pager__end" href="{{ '.' | url }}"><span class="pager__l">End of the line</span><span class="pager__t">Back to home</span></a>
+  {% endif %}
+</nav>

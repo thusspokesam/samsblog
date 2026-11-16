@@ -1,0 +1,15 @@
+<dialog id="search" class="search" aria-label="Search the knowledge base">
+  <form role="search" method="dialog" class="search__form">
+    <div class="search__top">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <label class="sr-only" for="q">Search the knowledge base</label>
+      <input id="q" type="search" role="combobox" aria-expanded="false" aria-controls="results" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Search guides, versions, procedures…">
+      <button type="button" class="search__close" data-search-close aria-label="Close search">Esc</button>
+    </div>
+    <p class="search__label" id="suggested" hidden>Suggested</p>
+    <ul id="results" role="listbox" aria-label="Search results"></ul>
+    <div id="empty" hidden></div>
+    <p id="count" class="sr-only" role="status" aria-live="polite"></p>
+    <p class="search__keys" aria-hidden="true"><kbd>↑</kbd> <kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+  </form>
+</dialog>

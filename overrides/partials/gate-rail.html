@@ -1,0 +1,14 @@
+{#- Gate rail: only for sections listed in extra.sequential_sections (section titles; no string methods in MiniJinja).
+    Overview is is_index and first child, so it is filtered out before numbering. -#}
+{% if page.ancestors and page.ancestors[0].title in config.extra.sequential_sections %}
+{% set gates = page.ancestors[0].children | rejectattr('is_index') | list %}
+<nav class="gates" aria-label="Acceptance gates">
+  <ol>
+    {% for g in gates %}
+    <li{% if g.url == page.url %} class="is-current"{% endif %}>
+      <a href="{{ g.url | url }}"{% if g.url == page.url %} aria-current="page"{% endif %}><span class="gates__n">Gate {{ loop.index }} of {{ loop.length }}</span><span class="gates__t">{{ g.title }}</span></a>
+    </li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}

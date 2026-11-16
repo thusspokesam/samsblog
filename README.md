@@ -4,19 +4,16 @@ Zensical 0.1.1 documentation site. Markdown front matter is the single source of
 truth for guide listings, collection pages, navigation, counts and ownership.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the schema and one-file authoring flow.
 
-```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
-python scripts/build.py
-python -m http.server 8000 --directory site
-```
+## Content
+- `docs/product-engineering/`: approved versions, benchmark results, and benchmarking methodology.
+- `docs/deploy-ops/`: deployment, validation, burn-in, and onboarding (four acceptance gates, in order).
+- `mkdocs.yml`: site navigation and theme settings.
+- `overrides/`: the custom theme (page shell and partials).
+- `docs/stylesheets/gpuaas.css`, `docs/assets/gpuaas.js`: all styling and behaviour. No third-party code.
+- `docs/assets/brand/`: logo, mark and favicons.
+- `DESIGN.md`: design system, decisions and maintenance notes.
 
-Open http://localhost:8000/. Rebuild and refresh after source changes.
-CI checks full Git history, runs tests, then builds and deploys `site/` to GitHub
-Pages on main. Pull requests build/test without deployment. No hosting visibility
-or repository permissions are changed by these files.
+To add a page, create the Markdown file and add it to `nav` in `mkdocs.yml`. Navigation, search, prev/next and the gate rail pick it up automatically.
 
 ## Build design
 

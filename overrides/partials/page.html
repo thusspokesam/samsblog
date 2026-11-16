@@ -1,0 +1,12 @@
+<aside class="sidebar" aria-label="Section">
+  <nav aria-label="Section navigation">{% include "partials/nav.html" %}</nav>
+</aside>
+<main id="main" tabindex="-1" class="doc">
+  {% include "partials/breadcrumb.html" %}
+  {% include "partials/gate-rail.html" %}
+  {% include "partials/toc.html" %}
+  <article class="prose">
+    {% include "partials/content.html" %}
+  </article>
+  {% include "partials/pagination.html" %}
+</main>

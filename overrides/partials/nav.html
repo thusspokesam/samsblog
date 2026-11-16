@@ -1,0 +1,19 @@
+{#- Section tree from nav.items. Gate pages of sequential sections show their ordinal. -#}
+<ul class="tree">
+  <li><a href="{{ '.' | url }}"{% if page and page.url == '' %} aria-current="page"{% endif %}>Home</a></li>
+  {% for item in nav.items %}{% if item.children %}
+  {% set seq = item.title in config.extra.sequential_sections %}
+  {% set cur = page and page.ancestors and page.ancestors[0].title == item.title %}
+  <li class="tree__sec">
+    <details{% if cur %} open{% endif %}>
+      <summary>{{ item.title }}</summary>
+      <ul>
+        {% for c in item.children %}
+        <li><a href="{{ c.url | url }}"{% if page and c.url == page.url %} aria-current="page"{% endif %}>
+          {% if seq and not c.is_index %}<span class="ord">{{ loop.index0 }}</span>{% endif %}{% if c.is_index %}Overview{% else %}{{ c.title }}{% endif %}</a></li>
+        {% endfor %}
+      </ul>
+    </details>
+  </li>
+  {% endif %}{% endfor %}
+</ul>

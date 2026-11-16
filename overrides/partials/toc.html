@@ -1,0 +1,14 @@
+{% set t = page.toc %}
+{% if t and t | length == 1 %}{% set t = t[0].children %}{% endif %}
+{% if t and t | length > 1 %}
+<details class="toc" open>
+  <summary>On this page</summary>
+  <nav aria-label="On this page">
+    <ul>
+      {% for i in t %}
+      <li><a href="{{ i.url }}">{{ i.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</details>
+{% endif %}

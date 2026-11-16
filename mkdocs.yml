@@ -6,39 +6,38 @@ edit_uri: edit/main/docs/
 use_directory_urls: true
 theme:
   variant: modern
+  font: false
   custom_dir: overrides
-  font:
-    text: Inter
-    code: Roboto Mono
-  logo: assets/gpuaas-logo.png
-  favicon: assets/gpuaas-logo.png
-  palette:
-    scheme: default
-    primary: white
-    accent: red
+  logo: assets/brand/logo.svg
+  favicon: assets/brand/favicon.svg
   features:
-    - navigation.indexes
-    - navigation.sections
-    - content.action.edit
-    - content.code.copy
-    - search.highlight
+  - navigation.indexes
 plugins:
-  - search
-extra_css:
-  - stylesheets/hub.css
-extra_javascript:
-  - assets/hub.js
-markdown_extensions:
-  - admonition
-  - attr_list
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
+- search
+nav:
+- Home: index.md
+- Product Engineering:
+  - Overview: product-engineering/index.md
+  - Approved versions: product-engineering/approved-versions.md
+  - Benchmarking results: product-engineering/benchmarking-results.md
+  - Internal benchmarking procedure: product-engineering/benchmarking-procedure.md
+- Deploy & Ops:
+  - Overview: deploy-ops/index.md
+  - Deployment guide: deploy-ops/deployment-guide.md
+  - Validation procedure: deploy-ops/validation-procedure.md
+  - Burn-in procedure: deploy-ops/burn-in-procedure.md
+  - Onboarding process: deploy-ops/onboarding-process.md
 extra:
-  status:
-    new: New
-    updated: Updated
-    draft: Draft — not approved
-    deprecated: Deprecated
-    stable: Stable
+  sequential_sections:
+  - Deploy & Ops
+extra_css:
+- stylesheets/gpuaas.css
+markdown_extensions:
+- admonition
+- attr_list
+- pymdownx.highlight
+- pymdownx.superfences
+- pymdownx.tasklist:
+    custom_checkbox: true
+extra_javascript:
+- assets/gpuaas.js
