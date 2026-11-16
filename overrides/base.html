@@ -25,7 +25,7 @@
 <body data-base="{{ base_url }}">
 <a class="skip" href="#main" data-skip>Skip to content</a>
 {% include "partials/header.html" %}
-<div class="shell{% if page and page.url == '' %} shell--home{% endif %}">
+<div class="shell{% if not page or page.url == '' %} shell--home{% endif %}">
 {% block content %}{% endblock %}
 </div>
 {% include "partials/footer.html" %}

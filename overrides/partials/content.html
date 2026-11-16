@@ -5,9 +5,7 @@
     4. <input type="checkbox" disabled/>    -> aria-label baseline (JS refines it from the item text) -#}
 {% set c = page.content %}
 {% set c = c | replace('<p><strong>Status:</strong>', '<p class="status" role="group" aria-label="Document status"><strong>Status:</strong>') %}
-{% for w in ['Pending', 'Unapproved', 'Template', 'Not reviewed', 'Pass', 'Fail'] %}
-{% set c = c | replace('<td>' ~ w ~ '</td>', '<td><span class="chip chip--' ~ (w | lower | replace(' ', '-')) ~ '">' ~ w ~ '</span></td>') %}
-{% endfor %}
+{% set c = c | replace('<td>Pending</td>', '<td><span class="chip chip--pending">Pending</span></td>') | replace('<td>Unapproved</td>', '<td><span class="chip chip--unapproved">Unapproved</span></td>') | replace('<td>Template</td>', '<td><span class="chip chip--template">Template</span></td>') | replace('<td>Not reviewed</td>', '<td><span class="chip chip--not-reviewed">Not reviewed</span></td>') | replace('<td>Pass</td>', '<td><span class="chip chip--pass">Pass</span></td>') | replace('<td>Fail</td>', '<td><span class="chip chip--fail">Fail</span></td>') %}
 {% set c = c | replace('<table>', '<div class="table-wrap" role="region" aria-label="Table" tabindex="0"><table>') | replace('</table>', '</table></div>') %}
 {% set c = c | replace('<input type="checkbox" disabled/>', '<input type="checkbox" disabled aria-label="Checklist item"/>') %}
 {% if '<h1' not in page.content %}<h1>{{ page.title }}</h1>{% endif %}

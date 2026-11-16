@@ -46,7 +46,7 @@
   /* TOC: collapse below 1280px, scroll spy */
   mod('toc', function () {
     var t = $('.toc'); if (!t) return;
-    var mq = matchMedia('(min-width:1280px)');
+    var mq = matchMedia('(min-width:1400px)');
     var set = function () { t.open = mq.matches; };
     set(); mq.addEventListener('change', set);
     var links = $$('a', t), map = {};
