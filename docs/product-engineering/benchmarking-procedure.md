@@ -1,7 +1,16 @@
-# Internal benchmarking procedure
+---
+title: Benchmarking procedure
+summary: Repeatable tests and evidence capture
+section: product-engineering
+type: Procedure
+owner: TODO
+status: draft
+order: 30
+tags: []
+---
 
-**Status:** Template · Not approved  
-**Owner:** To be assigned  
+# Benchmarking procedure
+
 **Approver:** To be assigned  
 **Last reviewed:** Pending  
 **Applies to:** To be defined

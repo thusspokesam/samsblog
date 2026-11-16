@@ -1,9 +1,9 @@
-site_name: GPUaaS / Knowledge
+site_name: GPUaaS / r Operations
 site_url: https://thusspokesam.github.io/samsblog/
-site_description: Product engineering, deployment, and operations documentation for
-  AI infrastructure.
+site_description: Engineering and operations documentation for AI infrastructure.
 repo_url: https://github.com/thusspokesam/samsblog
 edit_uri: edit/main/docs/
+use_directory_urls: true
 theme:
   variant: modern
   font: false

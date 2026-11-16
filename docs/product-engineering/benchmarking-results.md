@@ -1,7 +1,16 @@
+---
+title: Benchmarking results
+summary: Performance records and comparisons
+section: product-engineering
+type: Record
+owner: TODO
+status: draft
+order: 20
+tags: []
+---
+
 # Benchmarking results
 
-**Status:** Template · Not approved  
-**Owner:** To be assigned  
 **Approver:** To be assigned  
 **Last reviewed:** Pending  
 **Applies to:** To be defined

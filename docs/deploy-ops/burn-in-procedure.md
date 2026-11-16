@@ -1,7 +1,16 @@
+---
+title: Burn-in procedure
+summary: Test stability under sustained load
+section: deploy-ops
+type: Procedure
+owner: TODO
+status: draft
+order: 30
+tags: []
+---
+
 # Burn-in procedure
 
-**Status:** Template · Not approved  
-**Owner:** To be assigned  
 **Approver:** To be assigned  
 **Last reviewed:** Pending  
 **Applies to:** To be defined

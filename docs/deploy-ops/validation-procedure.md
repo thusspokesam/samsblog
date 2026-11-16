@@ -1,7 +1,16 @@
+---
+title: Validation procedure
+summary: Verify configuration and readiness
+section: deploy-ops
+type: Procedure
+owner: TODO
+status: draft
+order: 20
+tags: []
+---
+
 # Validation procedure
 
-**Status:** Template · Not approved  
-**Owner:** To be assigned  
 **Approver:** To be assigned  
 **Last reviewed:** Pending  
 **Applies to:** To be defined
