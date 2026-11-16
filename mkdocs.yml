@@ -7,22 +7,11 @@ edit_uri: edit/main/docs/
 theme:
   variant: modern
   font: false
-  logo: assets/gpuaas-operations.png
-  favicon: assets/gpuaas-operations.png
-  palette:
-  - scheme: default
-    primary: white
-    accent: red
+  custom_dir: overrides
+  logo: assets/brand/logo.svg
+  favicon: assets/brand/favicon.svg
   features:
-  - navigation.tabs
-  - navigation.sections
   - navigation.indexes
-  - navigation.top
-  - navigation.footer
-  - search.suggest
-  - search.highlight
-  - content.action.edit
-  - content.code.copy
 plugins:
 - search
 nav:
@@ -38,8 +27,11 @@ nav:
   - Validation procedure: deploy-ops/validation-procedure.md
   - Burn-in procedure: deploy-ops/burn-in-procedure.md
   - Onboarding process: deploy-ops/onboarding-process.md
+extra:
+  sequential_sections:
+  - Deploy & Ops
 extra_css:
-- stylesheets/help-center-v2.css
+- stylesheets/gpuaas.css
 markdown_extensions:
 - admonition
 - attr_list
@@ -48,4 +40,4 @@ markdown_extensions:
 - pymdownx.tasklist:
     custom_checkbox: true
 extra_javascript:
-- assets/portal.js
+- assets/gpuaas.js

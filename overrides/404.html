@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{#- `page` is undefined here. Zensical emits root-absolute /samsblog/... URLs on this page. -#}
+{% block content %}
+<main id="main" tabindex="-1" class="notfound">
+  <p class="eyebrow">404 · <span class="tag">Off the line</span></p>
+  <h1>Page not found</h1>
+  <p class="lead">That address does not exist in this knowledge base. It may have moved, or the link is wrong.</p>
+  <p><button type="button" class="searchbar js-only" data-search-open><span>Search guides, versions, procedures…</span><kbd>/</kbd></button></p>
+  <ul class="plain-links">
+    <li><a href="{{ '.' | url }}">Home</a></li>
+    {% for item in nav.items %}{% if item.children %}<li><a href="{{ item.children[0].url | url }}">{{ item.title }}</a></li>{% endif %}{% endfor %}
+  </ul>
+</main>
+{% endblock %}

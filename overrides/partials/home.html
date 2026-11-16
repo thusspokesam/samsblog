@@ -1,0 +1,43 @@
+{#- Home. Card descriptions are copied from the section index pages (docs/product-engineering/index.md,
+    docs/deploy-ops/index.md). The status strip is hard-coded: update it and the card chips when a page is approved. -#}
+<main id="main" tabindex="-1" class="home">
+  <section class="hero" aria-labelledby="h1">
+    <p class="eyebrow">GPUAAS KNOWLEDGE BASE <span class="tag">TEMPLATE · NOT APPROVED</span></p>
+    <h1 id="h1">What do you need to know?</h1>
+    <div class="lead">{{ page.content | safe }}</div>
+    <p class="searchrow"><label class="sr-only" for="hero-search">Search the knowledge base</label><button id="hero-search" type="button" class="searchbar js-only" data-search-open aria-keyshortcuts="/ Control+K Meta+K"><span class="searchbar__ph">Search guides, versions, procedures…</span><span class="searchbar__keys"><kbd>/</kbd><kbd data-hint>Ctrl K</kbd></span><span class="searchbar__go">Search <span aria-hidden="true">→</span></span></button></p>
+    <div class="personas">
+      <a class="persona" href="{{ 'product-engineering/' | url }}"><span class="persona__q">I own baselines and benchmarks</span><span class="persona__t">Product Engineering <span aria-hidden="true">→</span></span><span class="persona__d">Engineering baselines, performance evidence, and repeatable test methods.</span></a>
+      <a class="persona" href="{{ 'deploy-ops/' | url }}"><span class="persona__q">I deploy, validate and hand over capacity</span><span class="persona__t">Deploy &amp; Ops <span aria-hidden="true">→</span></span><span class="persona__d">Deployment readiness through service handover.</span></a>
+    </div>
+    <p class="startwith"><span>Start with</span><a href="{{ 'product-engineering/approved-versions/' | url }}">Approved versions</a><a href="{{ 'deploy-ops/deployment-guide/' | url }}">Deployment</a><a href="{{ 'deploy-ops/burn-in-procedure/' | url }}">Burn-in</a></p>
+  </section>
+
+  <!-- STATUS STRIP: edit when a document is approved (also update the "Template" chips below). -->
+  <p class="strip"><strong>TEMPLATE · NOT APPROVED</strong> <span>Every document here is a template. Nothing is approved yet.</span></p>
+
+  <section class="board" aria-labelledby="qa">
+    <h2 id="qa">Quick access</h2>
+    <p class="board__lead">Find the standards and procedures you need.</p>
+
+    <div class="lane lane--a">
+      <h3>Product Engineering</h3>
+      <ul class="cards">
+        <li><a class="card" href="{{ 'product-engineering/approved-versions/' | url }}"><span class="card__t">Approved versions</span><span class="card__d">Supported component combinations and release approvals</span><span class="chip chip--template">Template</span></a></li>
+        <li><a class="card" href="{{ 'product-engineering/benchmarking-results/' | url }}"><span class="card__t">Benchmarking results</span><span class="card__d">Reviewed performance records and comparisons</span><span class="chip chip--template">Template</span></a></li>
+        <li><a class="card" href="{{ 'product-engineering/benchmarking-procedure/' | url }}"><span class="card__t">Internal benchmarking procedure</span><span class="card__d">Consistent test methodology and evidence</span><span class="chip chip--template">Template</span></a></li>
+      </ul>
+    </div>
+
+    <div class="lane lane--b">
+      <h3>Deploy &amp; Ops</h3>
+      <p class="lane__cap">Four separate acceptance gates. Record evidence before moving to the next.</p>
+      <ol class="rail">
+        <li><a class="card" href="{{ 'deploy-ops/deployment-guide/' | url }}"><span class="stn" aria-hidden="true">01</span><span class="card__t">Deployment guide</span><span class="card__d">Prepare and deploy the approved platform</span><span class="chip chip--template">Template</span></a></li>
+        <li><a class="card" href="{{ 'deploy-ops/validation-procedure/' | url }}"><span class="stn" aria-hidden="true">02</span><span class="card__t">Validation procedure</span><span class="card__d">Verify configuration and functional readiness</span><span class="chip chip--template">Template</span></a></li>
+        <li><a class="card" href="{{ 'deploy-ops/burn-in-procedure/' | url }}"><span class="stn" aria-hidden="true">03</span><span class="card__t">Burn-in procedure</span><span class="card__d">Assess stability under an approved load profile</span><span class="chip chip--template">Template</span></a></li>
+        <li><a class="card" href="{{ 'deploy-ops/onboarding-process/' | url }}"><span class="stn" aria-hidden="true">04</span><span class="card__t">Onboarding process</span><span class="card__d">Establish support ownership and handover</span><span class="chip chip--template">Template</span></a></li>
+      </ol>
+    </div>
+  </section>
+</main>

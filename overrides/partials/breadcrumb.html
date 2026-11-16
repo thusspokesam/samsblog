@@ -1,0 +1,9 @@
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ '.' | url }}">Home</a></li>
+    {% if page.ancestors %}{% set sec = page.ancestors[0] %}
+    {% if page.is_index %}<li aria-current="page">{{ sec.title }}</li>
+    {% else %}<li><a href="{{ sec.children[0].url | url }}">{{ sec.title }}</a></li><li aria-current="page">{{ page.title }}</li>{% endif %}
+    {% else %}<li aria-current="page">{{ page.title }}</li>{% endif %}
+  </ol>
+</nav>
